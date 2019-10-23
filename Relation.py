@@ -4,7 +4,7 @@ def names():
         This function takes zero arguments 
     '''
     first_name = str(input("Enter first name(Boy) : ")).strip()
-    second_name = str(input("Enter second name(Sister) : ")).strip()
+    second_name = str(input("Enter second name(Girl) : ")).strip()
     for letter in first_name:
         if letter is " ":
             first_name = first_name.replace(letter,'')
@@ -69,13 +69,13 @@ def find_relation(length=0):
     relation = [ 'F', 'L', 'A', 'M', 'E', 'S' ]
     size = 6
     for x in range(6):
-        if len(relation) is 1:
+        if len(relation) == 1:
             return relation[0]
         else:
             temp = length % (size-x)
-            if temp is 0:
+            if temp == 0:
                 relation.pop()
-            elif temp is 1:
+            elif temp == 1:
                 relation.pop(0)
             else:
                 lst01 = relation[:temp-1]
@@ -90,17 +90,17 @@ def print_relation(relation, names_list):
     '''
     name01 = names_list[0]
     name02 = names_list[1]
-    if relation is 'F':
+    if relation == 'F':
         print(f"\n\nFriends\n\n")
-    elif relation is 'L':
+    elif relation == 'L':
         print(f"\n\nLovers\n\n")
-    elif relation is 'A':
+    elif relation == 'A':
         print("\n\nAffection\n\n")
-    elif relation is 'M':
+    elif relation == 'M':
         print(f"\n\nMarriage\n\n")
-    elif relation is 'E':
+    elif relation == 'E':
         print(f"\n\nEnemies\n\n")
-    elif relation is 'S':
+    elif relation == 'S':
         print(f"\n\nSister\n\n")
     else:
         print('\n\nError in finding relation\n\n')
@@ -121,7 +121,7 @@ class Flames():
     check = names_checking(names_list)
     if check:
         result = difference(names_list)
-        if result is 0:
+        if result == 0:
             print("\n\nEnter Unique names.\n\n")
         else:
             relation = find_relation(result)
